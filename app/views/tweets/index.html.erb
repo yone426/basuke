@@ -1,0 +1,16 @@
+<% @tweets.each do |tweet|%>
+  <div calss="message">
+    <%= tweet.name %>
+    <%= tweet.text %>
+    <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
+    
+  </div>
+<% end %>
+
+<%= form_with(model: @tweet, local: true) do |form| %>
+  <%= form.text_field :name, placeholder: "名前" %>
+  <%= form.text_field :text, placeholder: "コメント" %>
+  <%= form.submit "SEND" %>
+<% end %>
+
+<div id="calendar"></div>
