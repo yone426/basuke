@@ -1,0 +1,40 @@
+body{
+  width: 100vw;
+  height: 100vh;
+}
+
+.new_event{
+    color: blue;
+    font-size: 50px;
+    text-decoration: none;
+    
+    a{
+      color: green;
+    }
+}
+
+.message{
+  border: solid 1px black;
+  margin-top: 30px;
+  a{
+    text-decoration: none;
+  }
+}
+
+.form{
+  margin-top: 20px;;
+}
+
+.alls{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.send{
+  background-color: skyblue;
+  color: white;
+  border-radius: 30px 30px 30px 30px;
+  font-size: 15px;
+}
+
