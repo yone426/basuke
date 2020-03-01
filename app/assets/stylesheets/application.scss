@@ -15,11 +15,15 @@
  *= require fullcalendar
  */
  @import "reset";
+ @import "tweets.scss";
+ 
+
 .header{
   background-color: gray;
   height: 70px;
+  width: 100%;
   text-align: center;
-  line-height: 70px;
+  line-height: 70px;;
   a{
     text-decoration: none;
     color: white;
@@ -27,7 +31,20 @@
   }
 }
 
+
 .contents{
   margin-top: 50px;
   padding: 0 50px;
+  position: relative;
+  overflow: scroll;
+}
+
+.footer{
+  background-color: black;
+  color: white;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  position: fixed;
 }
