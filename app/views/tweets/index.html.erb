@@ -1,3 +1,6 @@
+<div id="calendar"></div>
+
+
 <% @tweets.each do |tweet|%>
   <div calss="message">
     <%= tweet.name %>
@@ -12,5 +15,3 @@
   <%= form.text_field :text, placeholder: "コメント" %>
   <%= form.submit "SEND" %>
 <% end %>
-
-<div id="calendar"></div>
