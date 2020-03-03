@@ -11,6 +11,7 @@
           <%= link_to tweet.text, edit_tweet_path(tweet.id) %>
         </div>
       <% end %>
+      <%= paginate(@tweets) %>
     </div>
 
     <div class="form">

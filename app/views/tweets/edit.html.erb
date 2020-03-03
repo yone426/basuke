@@ -2,6 +2,7 @@
   <%= form.text_field :name, placeholder: "名前" %>
   <%= form.text_field :text, placeholder: "コメント" %>
   <%= form.submit "編集" %>
-  <br>
   <%= link_to '削除', "/tweets/#{@tweet.id}", method: :delete %>
+  <br>
+  
 <% end %>
