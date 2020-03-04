@@ -13,11 +13,23 @@
   <body>
       <header class="header">
         <%= link_to 'GO7SA', root_path %>
+        <%= link_to '新規登録', new_user_registration_path %>
       </header>
 
       <main class="contents", data-turbolinks="false">
         <%= yield %>
       </main>
+      <footer class="footer">
+        <div class="footer_left">
+          <p>・結成年度：2010年</p>
+          <p>・チーム名：GO7SA</p>
+        </div>
+        <div class="footer_right">
+          <p>お問い合わせ</p>
+            
+          <p></p>
+        </div>
+      </footer>
   </body>
 </html>
 
