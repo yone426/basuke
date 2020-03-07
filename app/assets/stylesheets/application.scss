@@ -14,8 +14,12 @@
  *= require_self
  *= require fullcalendar
  */
- @import "reset";
- @import "tweets.scss";
+@import "reset";
+@import "tweets.scss";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "players.scss";
+@import "games.scss";
  
 
 .header{
@@ -33,7 +37,7 @@
 
 
 .contents{
-  margin-top: 50px;
+  margin-top: 1px;
   padding: 50px 50px;
   position: relative;
   overflow: scroll;
@@ -59,11 +63,11 @@ form{
   padding-left: 50px;
   line-height: 25px;
   font-size: 25px;
-  color: black;
+  color: white;
 }
 .footer_right{
   padding-right: 50px;
   font-size: 25px;
   line-height: 50px;
-  color: black;
+  color: white;
 }

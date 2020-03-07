@@ -1,0 +1,23 @@
+<div class="games"> 
+  <%= link_to 'メンバー登録', new_player_path %>
+</div>  
+
+<div class="members">
+  <% @players.each do |player|%>
+    <div class="member">
+      <div class="left">
+        <div class="left_name">名前：<%= player.name %></div>
+        <div class="left_position">ポジション：<%= player.position %></div>
+        <div class="left_number">背番号：<%= player.uniform_number %>番</div>
+        <div class="left_point">総得点：<%= player.point %>点</div>
+      </div>     
+      <div class="right">  
+        <% if player.image? %>
+        <%= image_tag player.image.url(:thumb) %>
+        <% end %>
+      </div>  
+        <%= link_to '編集', edit_player_path(player.id) %>
+        
+    </div>  
+  <% end %>
+</div>
