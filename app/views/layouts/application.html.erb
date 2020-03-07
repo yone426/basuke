@@ -15,12 +15,14 @@
         <%= link_to 'GO7SA', root_path %>
         <%= link_to '新規登録', new_user_registration_path %>
         <%= link_to '試合結果', games_path %>
-        <%= link_to 'メンバー登録', players_path %>
+        <%= link_to 'メンバー紹介', players_path %>
 
       </header>
 
       <main class="contents", data-turbolinks="false">
+        <div class="content">
         <%= yield %>
+        </div>
       </main>
       <footer class="footer">
         <div class="footer_left">
@@ -29,8 +31,6 @@
         </div>
         <div class="footer_right">
           <p>お問い合わせ</p>
-            
-          <p></p>
         </div>
       </footer>
   </body>

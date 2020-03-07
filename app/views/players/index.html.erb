@@ -1,23 +1,44 @@
-<div class="games"> 
-  <%= link_to 'メンバー登録', new_player_path %>
-</div>  
+<div class="member_all"> 
+  <%= link_to '[メンバー登録]', new_player_path, class: "member_create" %>
 
-<div class="members">
-  <% @players.each do |player|%>
-    <div class="member">
-      <div class="left">
-        <div class="left_name">名前：<%= player.name %></div>
-        <div class="left_position">ポジション：<%= player.position %></div>
-        <div class="left_number">背番号：<%= player.uniform_number %>番</div>
-        <div class="left_point">総得点：<%= player.point %>点</div>
-      </div>     
-      <div class="right">  
-        <% if player.image? %>
-        <%= image_tag player.image.url(:thumb) %>
-        <% end %>
+  <div class="members">
+    <% @players.each do |player|%>
+      <div class="member">
+        <div class="right">  
+          <% if player.image? %>
+          <%= image_tag player.image.url(:thumb) %>
+          <% end %>
+        </div>  
+        <div class="left">
+          <div class="left_name">名前：<%= link_to player.name, edit_player_path(player.id) %></div>
+          <div class="left_position">ポジション：<%= player.position %></div>
+          <div class="left_number">背番号：<%= player.uniform_number %>番</div>
+          <div class="left_point">総得点：<%= player.point %>点</div>
+        </div>         
       </div>  
-        <%= link_to '編集', edit_player_path(player.id) %>
-        
+    <% end %>
+  </div>
+</div> 
+
+<div class="count">得点ランキング<br>
+
+      
+  <%# 1位 %>
+  <div class="count__1">
+    <div class="icon-gold"><i class="fas fa-crown">1位</i><%= @first_pointer.name %><%= @first_pointer.point %>点
+    </div>
+  </div>  
+
+  <%# 2位 %>
+  <div class="count__2">
+    <div class="icon-silver"><i class="fas fa-crown">2位</i><%= @second_pointer.name %><%= @second_pointer.point %>点
     </div>  
-  <% end %>
+  </div>
+
+  <%# 3位 %>
+  <div class="count__3">
+    <div class="icon-bronze"><i class="fas fa-crown">3位</i><%= @third_pointer.name %><%= @third_pointer.point %>点
+    </div>  
+  </div>
+
 </div>

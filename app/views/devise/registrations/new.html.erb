@@ -4,10 +4,6 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :nickname %> <em>(6 characters maximum)</em><br />
-    <%= f.text_field :nickname, autofocus: true %>
-    <%= f.label :position %> <em></em>
-    <%= f.text_field :position, autofocus: true %>
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>

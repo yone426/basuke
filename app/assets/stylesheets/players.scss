@@ -18,12 +18,17 @@
   display: flex;
   margin-bottom: 30px;
   margin-right: 3%;
+  background-color: rgba(177, 71, 10, 0.945);
 }
 
 .left{
   margin: 10px;
   .left_name{
     margin-top: 25px;
+    a{
+      text-decoration: none;
+      color: #000;
+    }
   }
   .left_position{
     margin-top: 5px;
@@ -39,3 +44,51 @@
 .right{
   margin: 10px;
 }
+
+.member_all{
+  .member_create{
+    font-size: 35px;
+    text-decoration: none;
+    color: black
+  }
+}
+
+.count{
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: solid 7px black;
+  
+  &__1{
+    font-size: 100px;
+    border: solid 7px black;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: gold;
+  }
+  &__2{
+    font-size: 70px;
+    border: solid 6px black;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: silver;
+  }  
+  &__3{
+    font-size: 50px;
+    border: solid 5px black;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: rgb(214, 98, 20);
+  }
+}
+
+//.member_all{
+  //background-image: image-url("9009.jpg");
+  //background-size: cover; 
+//}
