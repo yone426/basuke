@@ -1,11 +1,16 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.all
+    @players = Player.all.order(point: :desc).order(name: :desc)
+    # １位
+    @first_pointer = @players.first
+    # ２位
+    @second_pointer = @players.second
+    # ３位
+    @third_pointer = @players.third
   end
   
   def new
     @player = Player.new
-    
   end
 
   def create
@@ -15,6 +20,7 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
+    
   end
 
   def edit

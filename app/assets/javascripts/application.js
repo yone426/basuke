@@ -17,6 +17,9 @@
 //= require fullcalendar
 //= require turbolinks
 //= require_tree .
+
+
+
 $(function () {
   // 画面遷移を検知
   $(document).on('turbolinks:load', function () {
