@@ -1,9 +1,11 @@
+<div class="games_1">試合結果
+</div>
 <div class="games"> 
-  <%= link_to '試合結果登録', new_game_path %>
+ 
   <% @games.each do |game| %>
     <div class="game">
       <div class="game_date">
-        <%= game.date %><br>
+        <%= game.date %>
       </div>
 
       <div class="game_place">
@@ -22,7 +24,15 @@
       </div>
 
       <div class="game_result">
-        <%= game.result %>
+        <% if game.result == "Win" %>
+          <div class="win">
+            <%= game.result %>
+          </div>  
+        <% else game.result == "Lose" %>
+          <div class="lose">
+            <%= game.result %>
+          </div>  
+        <% end %>
       </div>  
 
       <% if user_signed_in? && current_user.id == game.user_id %>
