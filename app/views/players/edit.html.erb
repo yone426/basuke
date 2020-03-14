@@ -1,42 +1,6 @@
 <div class="player_create">
-  <%= form_with(model: @player, local: true) do |f| %>
+  <%= render partial: "player", locals: { player: @player } %>
 
-    <div class="form-group">
-      <%= f.label :name, "名前" %>
-      <%= f.text_field :name %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :uniform_number, "背番号" %>
-      <%= f.number_field :uniform_number, max:99, min:0 %>
-    </div>
-
-    <div class="form-group">
-      <p>＜ポジション＞</p>
-      <%= f.radio_button :position, :'G'%>
-      <%= f.label :result, "G", {value: :'G', class:"G"} %>
-      <%= f.radio_button :position, :'F'%>
-      <%= f.label :position, "F", {value: :'F', class:"F"} %>
-      <%= f.radio_button :position, :'C'%>
-      <%= f.label :position, "C", {value: :'C', class:"C"} %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :point, "総得点" %>
-      <%= f.number_field :point %>
-    </div>
-
-    <%= f.label :image, class: 'form__mask__image' do %>
-      写真登録：<%= icon('fas', 'image', class: 'icon') %>
-      <%= f.file_field :image, class: 'hidden' %>
-    <% end %>
-
-
-    <div class="btn">
-      <%= f.submit "編集する", class: "btn1" %>
-      <%= link_to "戻る", root_path, class: "btn2"%>
-    </div>
-  <% end %>
   <%= link_to '削除', "/players/#{@player.id}", method: :delete %>
   
 </div>

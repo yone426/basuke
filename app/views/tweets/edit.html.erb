@@ -1,8 +1,1 @@
-<%= form_with(model: @tweet, local: true) do |form| %>
-  <%= form.text_field :name, placeholder: "名前" %>
-  <%= form.text_field :text, placeholder: "コメント" %>
-  <%= form.submit "編集" %>
-  <%= link_to '削除', "/tweets/#{@tweet.id}", method: :delete %>
-  <br>
-  
-<% end %>
+<%= render partial: "tweet", locals: { tweet: @tweet } %>
