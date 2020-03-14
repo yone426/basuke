@@ -20,6 +20,7 @@ class TweetsController < ApplicationController
   def update
     tweet = Tweet.find(params[:id])
     tweet.update(tweet_params)
+    redirect_to root_path
   end
 
   def destroy
@@ -30,7 +31,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:name, :text)
+    params.require(:tweet).permit(:name, :text).merge(user_id: current_user.id)
   end
 
 end
