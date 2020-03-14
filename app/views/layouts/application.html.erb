@@ -16,10 +16,24 @@
     
     <header class="header">
       <% if user_signed_in?  %>
-        <%= link_to "#{current_user.team_name}", root_path %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        <%= link_to '試合結果', games_path %>
-        <%= link_to 'メンバー紹介', players_path %>
+      <div class="el_humburger"><!--ハンバーガーボタン-->
+        <div class="el_humburger_wrapper">
+          <span class="el_humburger_bar top"></span>
+          <span class="el_humburger_bar middle"></span>
+          <span class="el_humburger_bar bottom"></span>
+        </div>
+      </div>
+          <%= link_to "#{current_user.team_name}", root_path, class:"navi_item" %>
+      <div class="navi"><!--ナビゲーション-->
+        <div class="navi_inner">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"navi_item" %>
+          <%= link_to '試合結果', games_path, class:"navi_item" %>
+          <%= link_to '試合結果登録', new_game_path, class:"navi_item" %>
+          <%= link_to 'メンバー紹介', players_path, class:"navi_item" %>
+          <%= link_to 'メンバー登録', new_player_path, class: "member_create", class:"navi_item" %>
+        </div>
+      </div>
+
       <% else %>
         <%= link_to 'TOP', root_path %>
         <%= link_to '新規登録', new_user_registration_path %>
