@@ -20,6 +20,8 @@
 @import "font-awesome";
 @import "players.scss";
 @import "games.scss";
+@import "bootstrap-sprockets";
+@import "bootstrap";
  
 
 .header{
@@ -65,7 +67,7 @@ form{
 
 .footer_left{
   padding-left: 50px;
-  line-height: 25px;
+  line-height: 20px;
   font-size: 25px;
   color: white;
 }
@@ -75,3 +77,4 @@ form{
   line-height: 50px;
   color: white;
 }
+
