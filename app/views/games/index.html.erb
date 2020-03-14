@@ -1,21 +1,23 @@
- <div class="games"> 
+<div class="games"> 
   <%= link_to '試合結果登録', new_game_path %>
   <% @games.each do |game| %>
-
     <div class="game">
-
       <div class="game_date">
         <%= game.date %><br>
       </div>
 
       <div class="game_place">
-        <%= game.place %><br>
+        <%= "in" %>
+        <%= game.place %>
       </div>
 
       <div class="game_score">
-        <p class="myteam">GO7SA</p>
+        <%= game.user.team_name %>
         <%= game.goal %>
+        <%= "点" %>
+        <%= "VS" %>
         <%= game.allow %>
+        <%= "点" %>
         <%= game.opponent %>
       </div>
 
@@ -23,13 +25,13 @@
         <%= game.result %>
       </div>  
 
-      <div class="game_update">
-        <%= link_to '試合結果編集', edit_game_path(game.id), class: "update1" %>
-        <%= link_to '試合結果削除', "/games/#{game.id}", class:
-         "update2", method: :delete %>
-      </div>
-
+      <% if user_signed_in? && current_user.id == game.user_id %>
+        <div class="game_update">
+          <%= link_to '試合結果編集', edit_game_path(game.id), class: "update1" %>
+          <%= link_to '試合結果削除', "/games/#{game.id}", class:
+          "update2", method: :delete %>
+        </div>
+      <% end %>
     </div>
   <% end %>
-  
 </div>
