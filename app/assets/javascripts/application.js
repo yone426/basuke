@@ -19,6 +19,13 @@
 //= require bootstrap
 //= require_tree .
 
+$(function () {
+  $('.pagetop').click(function(){
+    $('html, body').animate({
+      'scrollTop': 0
+    }); 
+  });
+});
 
 
 $(function () {
@@ -52,6 +59,7 @@ $(function () {
                   center: 'title',
                   right: 'today prev,next'
               },
+              
               //終了時刻がないイベントの表示間隔
               defaultTimedEventDuration: '03:00:00',
               buttonText: {

@@ -1,21 +1,21 @@
-<div class="member_1">メンバー紹介
-</div>
+<div class="member_1">メンバー紹介</div>
 <div class="member_all"> 
-
   <div class="members">
     <% @players.each do |player|%>
       <div class="member">
-        <div class="right">  
-          <% if player.image? %>
-          <%= image_tag player.image.url(:thumb) %>
-          <% end %>
-        </div>  
-        <div class="left">
-          <div class="left_name">名前：<%= link_to player.name, edit_player_path(player.id) %></div>
-          <div class="left_position">ポジション：<%= player.position %></div>
-          <div class="left_number">背番号：<%= player.uniform_number %>番</div>
-          <div class="left_point">総得点：<%= player.point %>点</div>
-        </div>         
+        <% if user_signed_in? && current_user.id == player.user_id %>
+          <div class="right">  
+            <% if player.image? %>
+            <%= image_tag player.image.url(:thumb) %>
+            <% end %>
+          </div>  
+          <div class="left">
+            <div class="left_name">名前：<%= link_to player.name, edit_player_path(player.id) %></div>
+            <div class="left_position">ポジション：<%= player.position %></div>
+            <div class="left_number">背番号：<%= player.uniform_number %>番</div>
+            <div class="left_point">総得点：<%= player.point %>点</div>
+          </div>         
+        <% end %>  
       </div>  
     <% end %>
   </div>
