@@ -40,6 +40,6 @@ class PlayersController < ApplicationController
 
   private
   def player_params
-    params.require(:player).permit(:position, :name, :uniform_number, :point, :image)
+    params.require(:player).permit(:position, :name, :uniform_number, :point, :image).merge(user_id: current_user.id)
   end
 end

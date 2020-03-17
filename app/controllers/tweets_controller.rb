@@ -10,7 +10,10 @@ class TweetsController < ApplicationController
 
   def create
      @tweet = Tweet.create(tweet_params)
-     redirect_to root_path
+     respond_to do |format|
+      format.html { redirect_to tweets_path }
+      format.json
+    end
   end
 
   def edit

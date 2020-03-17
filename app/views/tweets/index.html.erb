@@ -13,9 +13,11 @@
     <div class="chat">
       <% @tweets.each do |tweet|%>
         <div class="message">
-          チーム<%= tweet.user.team_name %>：
+          チーム<%= link_to tweet.user.team_name, edit_tweet_path(tweet.id) %>：
           <%= tweet.name %>
-          <%= link_to tweet.text, edit_tweet_path(tweet.id) %>
+          <%= tweet.text %>
+          
+          
         </div>
       <% end %>
       <%= paginate(@tweets) %>
