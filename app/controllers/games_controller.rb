@@ -19,6 +19,10 @@ class GamesController < ApplicationController
   def edit
     @game = Game.find(params[:id])
   end
+
+  def search
+    @games = Game.search(params[:keyword])
+  end
   
   def update
     @game = Game.find(params[:id])
