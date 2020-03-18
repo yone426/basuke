@@ -41,5 +41,13 @@
     <div class="icon-bronze"><i class="fas fa-crown">3位</i><%= @third_pointer.name %><%= @third_pointer.point %>点
     </div>  
   </div>
-
+  
+  <% @scorer.each_with_index do |score, i| %>
+    <div>
+      <%= i + 1 %>位
+      <%= score.first %>
+      <%= score.second %>点
+    </div>
+  <% end %>
+   
 </div>

@@ -1,34 +1,44 @@
 <div class="game_create">
-  <%= form_with(model: @game, local: true) do |form| %>
+
+  <%= form_with(model: @game, local: true) do |f| %>
     <div class="form-group">
-      <%= form.label :date, "試合日(年/月/日)" %>
-      <%= form.date_select :date,{use_month_numbers: true, date_separator:'/'} %>
+      <%= f.label :date, "試合日(年/月/日)" %>
+      <%= f.date_select :date,{use_month_numbers: true, date_separator:'/'} %>
     </div>
 
     <div class="form-group">
-      VS <%= form.text_field :opponent, class:"form-control" %>
-      IN <%= form.text_field :place, class:"form-control" %>
+      VS <%= f.text_field :opponent, class:"form-control" %>
+      IN <%= f.text_field :place, class:"form-control" %>
     </div>
 
     <div class="form-group">
       <p>＜結果＞</p>
-      <%= form.radio_button :result, :'Win'%>
-      <%= form.label :result, "Win", {value: :'Win', class:"win"} %>
-      <%= form.radio_button :result, :'Lose'%>
-      <%= form.label :result, "Lose", {value: :'Lose', class:"lose"} %>
-      <%= form.radio_button :result, :'Drow'%>
-      <%= form.label :result, "Drow", {value: :'Drow', class:"drow"} %>
+      <%= f.radio_button :result, :'Win'%>
+      <%= f.label :result, "Win", {value: :'Win', class:"win"} %>
+      <%= f.radio_button :result, :'Lose'%>
+      <%= f.label :result, "Lose", {value: :'Lose', class:"lose"} %>
+      <%= f.radio_button :result, :'Drow'%>
+      <%= f.label :result, "Drow", {value: :'Drow', class:"drow"} %>
     </div>
 
     <div class="form-group">
       <p>＜スコア＞</p>
-      <span class="mgl-20">得点 <%= form.number_field :goal %></span>
+      <span class="mgl-20">得点 <%= f.number_field :goal %></span>
       <span class="mgl-20">ー</span>
-      <span class="mgl-20"><%= form.number_field :allow %>失点</span>
+      <span class="mgl-20"><%= f.number_field :allow %>失点</span>
     </div>
 
-     <div class="btn">
-      <%= form.submit "投稿する", class: "btn1" %>
+    <div class="form_score">
+      <%= f.fields_for :game_players do |game_player| %>
+        <%= render 'game_player_fields', f: game_player %>
+      <div>
+        <%= link_to_add_association '別のplayerを追加', f, :game_players %>
+      </div>
+      <% end %>  
+    </div>
+
+    <div class="btn">
+      <%= f.submit "投稿する", class: "btn1" %>
       <%= link_to "戻る", root_path, class: "btn2"%>
     </div>
     
