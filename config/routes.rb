@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root to: "tweets#index"
   resources :tweets
   resources :events
-  resources :games
+  resources :games do
+    collection do
+      get 'search'
+    end
+  end
   resources :players
 end

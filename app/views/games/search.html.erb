@@ -1,14 +1,9 @@
-<div class="games_1">試合結果</div>
+<%= form_with(url: search_games_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
 
-<div class="search">
-  <%= form_with(url: search_games_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "相手チームを検索する", class: "search-input" %>
-    <%= form.submit "検索", class: "search-btn" %>
-  <% end %>
-</div>
-
-<div class="games"> 
- 
+<div class="contents row">
   <% @games.each do |game| %>
     <div class="game">
       <div class="game_date">
@@ -41,14 +36,6 @@
           </div>  
         <% end %>
       </div>  
-
-      <% if user_signed_in? && current_user.id == game.user_id %>
-        <div class="game_update">
-          <%= link_to '試合結果編集', edit_game_path(game.id), class: "update1" %>
-          <%= link_to '試合結果削除', "/games/#{game.id}", class:
-          "update2", method: :delete %>
-        </div>
-      <% end %>
     </div>
   <% end %>
 </div>

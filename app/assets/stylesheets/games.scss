@@ -12,12 +12,24 @@
   text-align: center;
 }
 
+.search{
+  text-align: center;
+  height: 50px;
+  font-size: 50;
+  line-height: 25px;
+  
+  .search_form{
+    height: 50px;
+    background-color: black;
+  }
+}
+
 .game{
   border: solid 1px black;
   width: 100%;
   height: 270px;
   margin-bottom: 100px;
-  padding: 10px 100px;
+  padding: 5px 100px;
   background-color: white;
 
   .game_date{
