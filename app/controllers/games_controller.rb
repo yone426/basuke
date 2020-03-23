@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
 
   def index
-    @games = Game.all
+    @games = Game.includes(:user)
     
   end
   
@@ -39,6 +39,7 @@ class GamesController < ApplicationController
   end
 
   private
+
   def game_params
     params.require(:game).permit(:opponent, :place, :result, :goal, :allow, :date,[game_players_attributes: [:game_id, :player_id, :score]]).merge(user_id: current_user.id)
   end
