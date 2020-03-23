@@ -1,15 +1,13 @@
 class PlayersController < ApplicationController
+
   def index
+    @players = Player.includes(:user)
     @game_players = GamePlayer.all
     @scorer = GamePlayer.joins(:player).group("players.name").order('sum_score desc').sum(:score)
 
-    @players = Player.all.order(point: :desc).order(name: :desc)
-    # １位
-    @first_pointer = @players.first
-    # ２位
-    @second_pointer = @players.second
-    # ３位
-    @third_pointer = @players.third
+    @score_key = @scorer.keys
+    @score_value = @scorer.values
+
   end
   
   def new
