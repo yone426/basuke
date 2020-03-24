@@ -40,7 +40,7 @@
 
 
 .contents{
-  margin: 50px 50px;
+  
   overflow: scroll;
   position: relative;
     
@@ -131,7 +131,7 @@ a{
   position: fixed;
   right: 0;
   height: 100%;
-  background-color: skyblue;
+  background-color: rgb(61, 61, 68);
   width: 0;
   z-index: 3;
   -webkit-transition: all 600ms ease-out;

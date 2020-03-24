@@ -1,55 +1,61 @@
 <div class="game_page">
-  <div class="games_1">試合結果</div>
+  <div class="game_all">
+    <div class="games_1">試合結果</div>
 
-  <div class="search">
-    <%= form_with(url: search_games_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "相手チーム、結果、場所で検索する", class: "search-input" %>
-      <%= form.submit "検索", class: "search-btn" %>
-    <% end %>
-  </div>
+    <div class="search">
+      <%= form_with(url: search_games_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "相手チーム、結果、場所で検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+    </div>
+
+    <div class="year">2019年度
+
+    </div>
 
 
 
-  <div class="tables">
-    <table border="1">
-      <thead>
-        <tr>
-          <th>日付</th>
-          <th>場所</th>
-          <th>チーム名</th>
-          <th>得点</th>
-          <th>失点</th>
-          <th>相手チーム</th>
-          <th>結果</th>
-          <th>編集</th>
-        </tr>
-      </thead>
-        <% @games.each do |game| %>
-      <tbody>
-        <tr>
-          <td><%= game.date %></td>
-          <td><%= game.place %></td>
-          <td><%= game.user.team_name %></td>
-          <td><%= game.goal %></td>
-          <td><%= game.allow %></td>
-          <td><%= game.opponent %></td>
-          <% if game.result == "Win" %>
-          <td class="win"><%= game.result %></td>
-          <% else game.result == "Lose" %>
-          <td class="lose"><%= game.result %></td>
+    <div class="tables">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>場所</th>
+            <th>チーム名</th>
+            <th>得点</th>
+            <th>失点</th>
+            <th>相手チーム</th>
+            <th>結果</th>
+            <th>編集</th>
+          </tr>
+        </thead>
+          <% @games.each do |game| %>
+        <tbody>
+          <tr>
+            <td><%= game.date %></td>
+            <td><%= game.place %></td>
+            <td><%= game.user.team_name %></td>
+            <td><%= game.goal %></td>
+            <td><%= game.allow %></td>
+            <td><%= game.opponent %></td>
+            <% if game.result == "Win" %>
+            <td class="win"><%= game.result %></td>
+            <% else game.result == "Lose" %>
+            <td class="lose"><%= game.result %></td>
+            <% end %>
+            <td>
+            <% if user_signed_in? && current_user.id == game.user_id %>
+              <div class="game_update">
+                <%= link_to '編集', edit_game_path(game.id), class: "update1" %>
+                <%= link_to '削除', "/games/#{game.id}", class: "update2", method: :delete %>
+              </div>
+            <% end %>
+            </td>
+          </tr>
+        </tbody>
           <% end %>
-          <td>
-          <% if user_signed_in? && current_user.id == game.user_id %>
-            <div class="game_update">
-              <%= link_to '編集', edit_game_path(game.id), class: "update1" %>
-              <%= link_to '削除', "/games/#{game.id}", class: "update2", method: :delete %>
-            </div>
-          <% end %>
-          </td>
-        </tr>
-      </tbody>
-        <% end %>
-    </table>  
-  </div>
+      </table>  
+    </div>
+  </div>  
 </div>  
   
