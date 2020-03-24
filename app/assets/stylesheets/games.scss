@@ -3,71 +3,87 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .game_page{
- 
-  .games_1{
-    font-size: 50px;
-    text-align: center;
-  }
-  
-  .search{
-    text-align: center;
-    height: 50px;
-    font-size: 50;
-    line-height: 25px;
-    
-    .search_form{
-      height: 50px;
-      background-color: black;
-    }
-    .search-input{
-      width: 300px;
+  background-color: rgb(4, 4, 51);
+  .game_all{
+    padding: 40px 20px;
+    margin: 0 200px 0 200px;
+    background-color: white;
+    .games_1{
+      font-size: 50px;
       text-align: center;
-    }
-    .search-btn{
-      width: 50px;
-    }
-  
-  }
-
-
-
-  .tables {
-    margin-bottom: 50px;
-  }
-  table {
-    text-align: center;
-    width: 80%;
-    margin: 0 auto;
-    height: 50px;
-    font-size: 25px;
-    th {
-      text-align: center;
-      background-color: rgb(10, 10, 117);
+      background-color: rgb(4, 4, 51);
       color: white;
-      height: 50px;
+      
     }
-    
-    td {
-      border: solid 1px rgb(10, 10, 117);
+    .search{
       text-align: center;
-      height: 50px;
-      font-size: 25px;
-    }
-    .win{
-      background-color: yellow;
-      color :black
-    }
-    .lose{
-      background-color: black;
-      color: gray;
-    }
-    
-    .game_update{
-      a{
-        text-decoration: none;
-        color: black;
-        font-size: 15px;
+      margin-top: 15px;
+      height: 70px;
+      line-height: 50px;
+      
+      .search_form{
+        height: 50px;
+        background-color: black;
+      }
+      .search-input{
+        width: 300px;
+        text-align: center;
+      }
+      .search-btn{
+        width: 50px;
       }
     }
-  }
+    .year {
+      background-color: rgb(4, 4, 51);
+      padding-left: 30px;
+      font-size: 30px;
+      color: white;
+      
+    }
+
+
+
+    .tables {
+      margin: 25px 0 50px 0;
+      // padding: 10px 10px;
+      // background-color: green;
+    }
+    table {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      height: 50px;
+      font-size: 25px;
+      th {
+        text-align: center;
+        background-color: rgb(10, 10, 117);
+        color: white;
+        height: 50px;
+      }
+      
+      td {
+        border: solid 1px rgb(32, 32, 131);
+        text-align: center;
+        height: 50px;
+        font-size: 25px;
+        background-color: white;
+      }
+      .win{
+        background-color: yellow;
+        color :black
+      }
+      .lose{
+        background-color: black;
+        color: gray;
+      }
+      
+      .game_update{
+        a{
+          text-decoration: none;
+          color: black;
+          font-size: 15px;
+        }
+      }
+    }
+  }  
 }
