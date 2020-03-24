@@ -4,13 +4,12 @@ class Game < ApplicationRecord
   has_many :players, through: :game_players
 
   accepts_nested_attributes_for :game_players, allow_destroy: true
-  
+ 
   def self.search(search)
     if search
-      Game.where('opponent LIKE(?)', "%#{search}%")
+      Game.where(['opponent LIKE ? OR result LIKE ? OR place LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
     else
       Game.all
     end
   end
-
 end
