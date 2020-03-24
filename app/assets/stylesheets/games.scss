@@ -37,51 +37,50 @@
       background-color: rgb(4, 4, 51);
       padding-left: 30px;
       font-size: 30px;
-      color: white;
-      
+      color: white;  
     }
-
-
 
     .tables {
       margin: 25px 0 50px 0;
-      // padding: 10px 10px;
-      // background-color: green;
-    }
-    table {
-      text-align: center;
-      width: 100%;
-      margin: 0 auto;
-      height: 50px;
-      font-size: 25px;
-      th {
+      table {
         text-align: center;
-        background-color: rgb(10, 10, 117);
-        color: white;
-        height: 50px;
-      }
-      
-      td {
-        border: solid 1px rgb(32, 32, 131);
-        text-align: center;
+        width: 100%;
+        margin: 0 auto;
         height: 50px;
         font-size: 25px;
-        background-color: white;
-      }
-      .win{
-        background-color: yellow;
-        color :black
-      }
-      .lose{
-        background-color: black;
-        color: gray;
-      }
-      
-      .game_update{
-        a{
+        .game_show{
           text-decoration: none;
           color: black;
-          font-size: 15px;
+        }
+        th {
+          text-align: center;
+          background-color: rgb(10, 10, 117);
+          color: white;
+          height: 50px;
+        }
+        
+        td {
+          border: solid 1px rgb(32, 32, 131);
+          text-align: center;
+          height: 50px;
+          font-size: 25px;
+          background-color: white;
+        }
+        .win{
+          background-color: yellow;
+          color :black
+        }
+        .lose{
+          background-color: black;
+          color: gray;
+        }
+        
+        .game_update{
+          a{
+            text-decoration: none;
+            color: black;
+            font-size: 15px;
+          }
         }
       }
     }
