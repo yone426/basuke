@@ -9,11 +9,7 @@
       <% end %>
     </div>
 
-    <div class="year">2019年度
-
-    </div>
-
-
+    <div class="year">2019年度</div>
 
     <div class="tables">
       <table border="1">
@@ -32,7 +28,7 @@
           <% @games.each do |game| %>
         <tbody>
           <tr>
-            <td><%= game.date %></td>
+            <td><%= link_to game.date, game_path(game.id), class: "game_show" %></td>
             <td><%= game.place %></td>
             <td><%= game.user.team_name %></td>
             <td><%= game.goal %></td>

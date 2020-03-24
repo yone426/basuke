@@ -16,6 +16,8 @@ class GamesController < ApplicationController
   end
 
   def show
+    @players = Player.all.includes(:game_players)
+    @game = Game.find(params[:id])
   end
 
   def edit
