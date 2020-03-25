@@ -4,10 +4,12 @@
 
 .game_page{
   background-color: rgb(4, 4, 51);
+  height: 100vh;
   .game_all{
     padding: 40px 20px;
     margin: 0 200px 0 200px;
     background-color: white;
+    height: 100vh;
     .games_1{
       font-size: 50px;
       text-align: center;
@@ -85,4 +87,25 @@
       }
     }
   }  
+}
+
+.pointer_all{
+  border: solid 1px black;
+  .pointer_name{
+    background-color: green;
+    font-size: 25px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 50px;
+    background-color: rgb(10, 10, 117);
+    color: white;
+    border: solid 1px black;
+  }
+  .pointer{
+    
+    text-align: center;
+    
+    line-height: 50px;
+    font-size: 25px;
+  }
 }

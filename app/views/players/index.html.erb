@@ -1,54 +1,59 @@
-<div class="member_1">メンバー紹介</div>
-  <div class="member_all"> 
-    <div class="members">
-      <% @players.each do |player|%>
-        <div class="member">
-          <% if user_signed_in? && current_user.id == player.user_id %>
-            <div class="right">  
-              <% if player.image? %>
-                <%= image_tag player.image.url(:thumb) %>
-              <% end %>
-            </div>  
-            <div class="left">
-              <div class="left_name">名前：<%= link_to player.name, edit_player_path(player.id) %></div>
-              <div class="left_position">ポジション：<%= player.position %></div>
-              <div class="left_number">背番号：<%= player.uniform_number %>番</div>
-              <div class="left_point">総得点：<%= player.point %>点</div>
-            </div>         
-          <% end %>  
+ <div class="player_page"> 
+
+  <div class="player_mamber">
+
+    <div class="member_1">メンバー紹介</div> 
+      <div class="members">
+        <% @players.each do |player|%>
+          <div class="member">
+            <% if user_signed_in? && current_user.id == player.user_id %>
+              <div class="left">  
+                <% if player.image? %>
+                  <%= image_tag player.image.url(:thumb) %>
+                <% end %>
+              </div>  
+              <div class="right">
+                <div class="name_position">
+                  <div class="right_name"><%= link_to player.name, edit_player_path(player.id) %></div>
+                  <div class="right_position"><%= player.position %></div>
+                </div>
+                <div class="right_number"><%= player.uniform_number %></div>
+                <%# <div class="right_point"><%= player.point %>
+              </div>         
+            <% end %>  
+          </div>  
+        <% end %>
+      </div>
+
+    <div class="count">得点ランキング<br>    
+      <%# 1位 %>
+      <div class="count__1">
+        <div class="icon-gold">
+          <i class="fas fa-crown">1位</i>
+          <%= @score_key.first %>
+          <%= @score_value.first %>点
+        </div>
+      </div>  
+
+      <%# 2位 %>
+      <div class="count__2">
+        <div class="icon-silver">
+          <i class="fas fa-crown">2位</i>
+          <%= @score_key.second %>
+          <%= @score_value.second %>点
         </div>  
-      <% end %>
-    </div>  
-  </div>
-</div> 
+      </div>
 
-<div class="count">得点ランキング<br>
-      
-  <%# 1位 %>
-  <div class="count__1">
-    <div class="icon-gold">
-      <i class="fas fa-crown">1位</i>
-      <%= @score_key.first %>
-      <%= @score_value.first %>点
+      <%# 3位 %>
+      <div class="count__3">
+        <div class="icon-bronze">
+          <i class="fas fa-crown">3位</i>
+          <%= @score_key.third %>
+          <%= @score_value.third %>点
+        </div>
+      </div>  
     </div>
-  </div>  
 
-  <%# 2位 %>
-  <div class="count__2">
-    <div class="icon-silver">
-      <i class="fas fa-crown">2位</i>
-      <%= @score_key.second %>
-      <%= @score_value.second %>点
-    </div>  
   </div>
-
-  <%# 3位 %>
-  <div class="count__3">
-    <div class="icon-bronze">
-      <i class="fas fa-crown">3位</i>
-      <%= @score_key.third %>
-      <%= @score_value.third %>点
-    </div>
-  </div>  
 
 </div>
