@@ -12,8 +12,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   
   </head>
+
   <body>
-    
     <header class="header">
       <% if user_signed_in?  %>
       <div class="el_humburger"><!--ハンバーガーボタン-->
@@ -33,7 +33,6 @@
           <%= link_to 'メンバー登録', new_player_path, class: "member_create", class:"navi_item" %>
         </div>
       </div>
-
       <% else %>
         <%= link_to 'TOP', root_path %>
         <%= link_to '新規登録', new_user_registration_path %>
@@ -41,14 +40,13 @@
       <% end %>
     </header>
 
-    <main class="contents", data-turbolinks="false">
-      <div class="content">
+    <main class="contents">
+      <%# <div class="content", data-turbolinks="false">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/4.3.3/jquery.min.js"></script>
         <script src="js/slick.min.js"></script>
         <script src="js/main.js"></script>
-      </div>
+      </div> %>
       <%= yield %>
-      <div>
     </main>
 
     <footer class="footer">

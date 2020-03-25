@@ -1,83 +1,82 @@
 // Place all the styles related to the players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.hidden{
-  display: none;
-}
 
-.member_1{
-  text-align: center;
-  font-size: 50px;
-}
+// .hidden{
+//   display: none;
+  
+// }
 
-.members{
-  display: flex;
-  flex-wrap: wrap;
-  //background-color: rgb(10, 10, 117);
+.player_page{
+  margin: 10px 10px 60px 10px;
 }
-
-.member{
-  height: 230px;
-  line-height: 38px;
-  width: 30%;
-  border: solid 1px black;
-  font-size: 20px;
-  display: flex;
-  margin-bottom: 30px;
-  margin-right: 2%;
-  margin-left: 1%;
-  background-color: black;
-  color: white;
-  margin-top: 30px;
-  .left{
-    .left_name{
-      a{
-        color: white;
-        text-decoration: none;
-      }
-    }
+  .member_1{
+    text-align: center;
+    font-size: 50px;
   }
   
-}
-
-.left{
-  margin: 10px;
-  .left_name{
-    margin-top: 25px;
-    a{
-      text-decoration: none;
-      color: #000;
+  .members{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 80px 0 80px;
+    // background-color: rgb(10, 10, 117);
+    //background-color: rgb(10, 10, 117);
+  }
+  
+  .member{
+    height: 350px;
+    // line-height: 38px;
+    width: 22%;
+    border: solid 1px black;
+    // font-size: 20px;
+    // display: flex;
+    // margin-bottom: 30px;
+    margin-right: 2%;
+    margin-left: 1%;
+    background-color: black;
+    color: rgb(35, 124, 42);
+    margin-top: 30px;
+   
+    .left{
+      // margin: 10px;
+     padding: 10px 0 10px 12px;
+    }
+    .right{
+      padding: 10px 10px 0 25px;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      .name_position{
+        
+        font-size: 25px;
+        .right_name{
+          a{
+            color: white;
+            text-decoration: none;
+          }
+        }
+          .right_position{
+            
+          }
+        }
+      .right_number{
+        font-size: 35px;
+        margin-top: 18px;
+        color: #000;
+        -webkit-text-stroke: 2px #FFF;
+        
     }
   }
-  .left_position{
-    margin-top: 5px;
-  }
-  .left_number{
-    margin-top: 5px;
-  }
-  .left_point{
-    margin-top: 5px;
-  }
 }
 
-.right{
-  margin: 10px;
-}
 
-.member_all{
-  .member_create{
-    font-size: 35px;
-    text-decoration: none;
-    color: black
-  }
-}
-
+ 
 .count{
   font-size: 50px;
   text-align: center;
   margin-top: 50px;
   border: solid 7px black;
-
+  
   
   &__1{
     font-size: 100px;
@@ -87,6 +86,7 @@
     text-align: center;
     margin-bottom: 20px;
     background-color: gold;
+    
   }
   &__2{
     font-size: 70px;
@@ -107,6 +107,7 @@
     background-color: rgb(214, 98, 20);
   }
 }
+
 
 //.member_all{
   //background-image: image-url("9009.jpg");

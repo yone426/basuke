@@ -2,17 +2,6 @@
   <div class="game_all">
     <div class="games_1">試合結果</div>
 
-    <% @players.each do |player| %>
-      <% player.game_players.each do |game_player| %>
-        <div class="game_scorer"> 
-          <% if game_player.game_id == @game.id %>
-          <%= player.name %>
-          <%= game_player.score %>
-          <% end %>
-        </div>  
-      <% end %>
-    <% end %>
-
     <div class="tables">
       <table border="1">
         <thead>
@@ -52,6 +41,22 @@
           </tr>
         </tbody>
       </table>  
+    </div>
+    <div class="pointer_all">
+      <div class="pointer_name">得点者</div>
+
+      <div class="pointer">
+        <% @players.each do |player| %>
+          <% player.game_players.each do |game_player| %>
+            <div class="game_scorer"> 
+              <% if game_player.game_id == @game.id %>
+              <%= player.name %>：
+              <%= game_player.score %>点
+              <% end %>
+            </div>  
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>  
 </div>    
