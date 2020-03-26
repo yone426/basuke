@@ -1,2 +1,2 @@
-json.name  @tweet.name
-json.text  @tweet.text
+# json.name  @tweet.name
+# json.text  @tweet.text
