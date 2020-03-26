@@ -1,6 +1,8 @@
-<div class="player_create">
-  <%= render partial: "player", locals: { player: @player } %>
+<div class="new">
+  <div class="player_create">
+    <%= render partial: "player", locals: { player: @player } %>
 
-  <%= link_to '削除', "/players/#{@player.id}", method: :delete %>
-  
-</div>
+    <%= link_to '削除', "/players/#{@player.id}", method: :delete %>
+    
+  </div>
+</div>  

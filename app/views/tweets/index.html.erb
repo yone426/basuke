@@ -1,34 +1,30 @@
 <div class="a">
-    <div class="b"><img class="c" src="assets/IMG_7687 3.JPG"></div>
-    <div class="b"><img class="c" src="assets/IMG_7875 2.JPG"></div>
-    <div class="b"><img class="c" src="assets/IMG_7876 2.JPG"></div>
+  <div class="b"><img class="c" src="assets/IMG_7687 3.JPG"></div>
+  <div class="b"><img class="c" src="assets/IMG_7875 2.JPG"></div>
+  <div class="b"><img class="c" src="assets/IMG_7876 2.JPG"></div>
 </div>
 
-<div id="calendar"></div>
-<%= link_to 'New Event', new_event_path, class: "new_event" %>
+<div id="calendar">
+  <%= link_to 'New Event', new_event_path, class: "new_event" %>
+</div>
 
-<br>
 <div class="alls">
-  <div class="all">チャット
+  <div class="all">
     <div class="chat">
       <% @tweets.each do |tweet|%>
         <div class="message">
           チーム<%= link_to tweet.user.team_name, edit_tweet_path(tweet.id) %>：
           <%= tweet.name %>
-          <%= tweet.text %>
-          
-          
+          <%= tweet.text %>     
         </div>
       <% end %>
       <%= paginate(@tweets) %>
     </div>
-
     <div class="form">
       <%= render partial: "tweet", locals: { tweet: @tweet } %>
     </div>
   </div>
-
-    <div class="youtube">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/dOMvurh-_e0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+  <div class="youtube">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dOMvurh-_e0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 </div>
