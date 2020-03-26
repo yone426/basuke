@@ -3,5 +3,6 @@
   <td><%= f.collection_select :player_id, Player.all, :id, :name %></td>
   <td><%= f.label :score %></td>
   <td><%= f.number_field :score %></td>
-  <td><%= link_to_remove_association "行削除", f %></td>
 </tr>
+
+  <%# <td><%= link_to_remove_association "行削除", f %>

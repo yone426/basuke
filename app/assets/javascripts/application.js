@@ -16,8 +16,8 @@
 //= require cocoon
 //= require moment
 //= require fullcalendar
-//= require turbolinks
 //= require bootstrap
+//= require turbolinks
 //= require_tree .
 
 $(function () {
@@ -95,13 +95,6 @@ $(function () {
 });
 
 
-$(function() {
-    $('.a').slick({
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-    });
-});
 
 var navigationOpenFlag = false;
 var navButtonFlag = true;
