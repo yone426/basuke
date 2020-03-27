@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_action :set_player, only: [:show, :edit, :update, :destroy]
 
   def index
     @players = Player.includes(:user)
@@ -20,22 +21,22 @@ class PlayersController < ApplicationController
   end
 
   def show
-    @player = Player.find(params[:id])
+    # @player = Player.find(params[:id])
   end
 
   def edit
-    @player = Player.find(params[:id])
+    # @player = Player.find(params[:id])
   end
   
   def update
-    player = Player.find(params[:id])
-    player.update(player_params)
+    # @player = Player.find(params[:id])
+    @player.update(player_params)
     redirect_to players_path
   end
 
   def destroy
-    player = Player.find(params[:id])
-    player.destroy
+    # @player = Player.find(params[:id])
+    @player.destroy
     redirect_to players_path
   end
 
@@ -43,4 +44,10 @@ class PlayersController < ApplicationController
   def player_params
     params.require(:player).permit(:position, :name, :uniform_number, :point, :image).merge(user_id: current_user.id)
   end
+
+  def set_player
+    @player = Player.find(params[:id])
+  end
+
+
 end

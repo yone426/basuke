@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :set_tweet, only: [:edit, :update, :destroy]
   
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(4).includes(:user)
@@ -18,24 +19,28 @@ class TweetsController < ApplicationController
   end
 
   def edit
-    @tweet = Tweet.find(params[:id])
+    # @tweet = Tweet.find(params[:id])
   end
 
   def update
-    tweet = Tweet.find(params[:id])
-    tweet.update(tweet_params)
+    # @tweet = Tweet.find(params[:id])
+    @tweet.update(tweet_params)
     redirect_to root_path
   end
 
   def destroy
-    tweet = Tweet.find(params[:id])
-    tweet.destroy
+    # @tweet = Tweet.find(params[:id])
+    @tweet.destroy
     redirect_to root_path
   end
 
   private
   def tweet_params
     params.require(:tweet).permit(:name, :text).merge(user_id: current_user.id)
+  end
+
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
   end
 
 end
