@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
 
+  before_action :set_game, only: [:destroy, :show, :edit, :update]
+
   def index
     @games = Game.includes(:user)
     
@@ -17,11 +19,11 @@ class GamesController < ApplicationController
 
   def show
     @players = Player.all.includes(:game_players)
-    @game = Game.find(params[:id])
+    # @game = Game.find(params[:id])
   end
 
   def edit
-    @game = Game.find(params[:id])
+    # @game = Game.find(params[:id])
   end
 
   def search
@@ -29,13 +31,13 @@ class GamesController < ApplicationController
   end
   
   def update
-    @game = Game.find(params[:id])
+    # @game = Game.find(params[:id])
     @game.update(game_params)
     redirect_to games_path
   end
 
   def destroy
-    @game = Game.find(params[:id])
+    # @game = Game.find(params[:id])
     @game.destroy
     redirect_to games_path
   end
@@ -44,6 +46,10 @@ class GamesController < ApplicationController
 
   def game_params
     params.require(:game).permit(:opponent, :place, :result, :goal, :allow, :date,[game_players_attributes: [:game_id, :player_id, :score]]).merge(user_id: current_user.id)
+  end
+
+  def set_game
+    @game = Game.find(params[:id])
   end
 
 end
