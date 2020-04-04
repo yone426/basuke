@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :tweets
   has_many :players
+  validates :team_name, presence: true
 end
+
+
