@@ -13,22 +13,22 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title,required: true %>
   </div>
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.text_field :body %>
+    <%= form.text_field :body ,required: true%>
   </div>
 
   <div class="field">
     <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
+    <%= form.datetime_select :start_date,required: true %>
   </div>
 
   <div class="field">
     <%= form.label :end_date %>
-    <%= form.datetime_select :end_date %>
+    <%= form.datetime_select :end_date,required: true %>
   </div>
 
   <div class="actions">
