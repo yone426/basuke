@@ -1,5 +1,5 @@
 <%= form_with(model: @tweet, local: true, id: "new_tweet") do |form| %>
-  <%= form.text_field :name, placeholder: "名前" %>
-  <%= form.text_field :text, placeholder: "コメント" %>
+  <%= form.text_field :name, placeholder: "名前",required: true %>
+  <%= form.text_field :text, placeholder: "コメント",required: true %>
   <%= form.submit "SEND", class:"send"%>
 <% end %>
