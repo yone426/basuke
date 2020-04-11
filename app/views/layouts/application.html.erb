@@ -23,7 +23,7 @@
           <span class="el_humburger_bar bottom"></span>
         </div>
       </div>
-          <%= link_to "#{current_user.team_name}", root_path, class:"navi_item" %>
+          <%= link_to "#{current_user.team_name}", root_path, class:"navi_item",data: {"turbolinks"=>false} %>
       <div class="navi"><!--ナビゲーション-->
         <div class="navi_inner">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"navi_item" %>
