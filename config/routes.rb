@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  get '/users/sign_in' => 'users/registrations#new',as: :signin
   resources :players
   resources :game_players
 
