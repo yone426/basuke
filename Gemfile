@@ -78,5 +78,5 @@ gem 'devise-i18n-views'
 gem "font-awesome-sass"
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'bootstrap-sass', '3.3.6'
+gem 'bootstrap-sass', '3.4.1'
 gem 'cocoon'
