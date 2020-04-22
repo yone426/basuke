@@ -25,18 +25,15 @@ Things you may want to cover:
 
 ## アプリケーション名
 
----
 GO7SA_BLOG  
 
 ## アプリケーション概要（なぜ創ったか）
 
----
 所属しているバスケサークルにて、チームのホームページあればいいね、と言う話があり、スキルアップも兼ねて作成することになりました。  
 バスケチームで利用できるチームのホームページを想定しております。
 
 ## 実装した機能
 
----
 
 1.slickを利用したアルバムも兼ねたスライダー機能
 
@@ -56,19 +53,16 @@ GO7SA_BLOG
 
 ## 工夫した点 こだわりポイント
 
----
-
 - 自身で勝手に作成したのではなく、メンバーに必要機能をヒアリングし、各機能の実装ごとに感想のヒアリングを実施。
 
 - fullcalenderを利用し、チームでの予定を見える化した
 
 - メンバーの得点を中間テーブルで管理し、複数のデータベースに跨ってデータを並べ替え、表示させた.
 
-
-
 ## 今後
-
----
 
 実際にチームのホームページとして機能させ、試合結果等を記載していきたいと考えてます。
 また他チームも登録出来るようupdateし、練習試合等が実際に組めるところまで進展させていきます。
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m8uDhoYEis8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
