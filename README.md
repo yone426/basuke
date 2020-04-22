@@ -36,33 +36,72 @@ GO7SA_BLOG
 
 
 1.slickを利用したアルバムも兼ねたスライダー機能
+- アルバム機能として枚数を増加予定
 
-2.練習試合等を申し込むことのできるチャット機能
+<img width="1432" alt="top" src="https://user-images.githubusercontent.com/59817401/79980755-8fe55900-84de-11ea-89b8-5ff0bbad1c1a.png">
 
-3.試合の振り返りができるyoutube埋め込み
+2.練習試合等を申し込むことのできるチャット機能、YOUTUBEでの試合観戦
+
+- 他のチームにも広めていき、交流できるアプリを想定
+
+- チーム名がデフォルトで表示されます
+
+<img width="1432" alt="youtube" src="https://user-images.githubusercontent.com/59817401/79980648-61677e00-84de-11ea-8396-04d46788d888.png">
+
 
 4.試合結果等の一覧表示
 
+- 試合の記録を一覧表示
+
+- 日付を押すと試合詳細画面に飛び、その試合での個人得点が見れる
+
+<img width="1432" alt="試合一覧" src="https://user-images.githubusercontent.com/59817401/79980678-704e3080-84de-11ea-8bbe-db7555029c7c.png">
+
 5.メンバー紹介
+
+- flex機能により4人ずつ表示（個人名特定できない様現在は、全員同じ画像を適用）
+
+<img width="1432" alt="紹介" src="https://user-images.githubusercontent.com/59817401/79980695-780dd500-84de-11ea-8559-450d3d484124.png">
 
 6.得点ランキング
 
+- 複数のデータベースを絡めてのランキング
+~~~ruby
+def index
+    @players = Player.includes(:user)
+    @game_players = GamePlayer.all
+    @scorer = GamePlayer.joins(:player).group("players.name").order('sum_score desc').sum(:score)
+
+    @score_key = @scorer.keys
+    @score_value = @scorer.values
+
+  end
+~~~
+
+<img width="1432" alt="ランキング" src="https://user-images.githubusercontent.com/59817401/79980674-6debd680-84de-11ea-9a53-41fd8c88beb4.png">
+
+
 7.gemファイルfullcalenderを利用した予定共有カレンダー
+
+- 予定の見える化
+
+- 土日の色付け
+
+<img width="1432" alt="カレンダー" src="https://user-images.githubusercontent.com/59817401/79980667-6cbaa980-84de-11ea-97c1-6123b96cb8b0.png">
 
 主に上記を機能として盛り込みました。
 
-## 工夫した点 こだわりポイント
+## 工夫した点 苦労した点
 
-- 自身で勝手に作成したのではなく、メンバーに必要機能をヒアリングし、各機能の実装ごとに感想のヒアリングを実施。
+- 自身で勝手に作成したのではなく、メンバーに必要機能をヒアリングし、各機能の実装ごとに感想のヒアリングした点
 
-- fullcalenderを利用し、チームでの予定を見える化した
+- メンバーの得点を中間テーブルで管理し、gameモデルとgame_playerモデルのカラムを同時に更新している点
 
-- メンバーの得点を中間テーブルで管理し、複数のデータベースに跨ってデータを並べ替え、表示させた.
+- 複数のデータベースに跨ってデータを並べ替え、表示させた点
+
 
 ## 今後
 
 実際にチームのホームページとして機能させ、試合結果等を記載していきたいと考えてます。
 また他チームも登録出来るようupdateし、練習試合等が実際に組めるところまで進展させていきます。
-
-<img width="1432" alt="top" src="https://user-images.githubusercontent.com/59817401/79978967-bfdf2d00-84db-11ea-8aeb-f5c9497e824a.png">
 
