@@ -63,6 +63,3 @@ GO7SA_BLOG
 
 実際にチームのホームページとして機能させ、試合結果等を記載していきたいと考えてます。
 また他チームも登録出来るようupdateし、練習試合等が実際に組めるところまで進展させていきます。
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/m8uDhoYEis8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
