@@ -36,7 +36,7 @@
       <% else %>
         <div class="non_login">
           <div class="header_left">
-            <%= link_to 'TOP', root_path %>
+            <%# <%= link_to 'TOP', root_path, data: {"turbolinks"=>false} %> 
           </div>
           <div class="header_right">  
             <%= link_to '新規登録', new_user_registration_path,class: 'login' %>
@@ -47,13 +47,6 @@
     </header>
 
     <main class="contents">
-      <%# <div class="content", data-turbolinks="false">
-        <script src="js/slick.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/4.3.3/jquery.min.js"></script>
-      </div> %>
-      
-      
       <%= yield %>
     </main>
 
@@ -63,7 +56,7 @@
         <p>・チーム名：GO7SA</p>
       </div>
       <div class="footer_right">
-        <p class="pagetop"><a href="#wrap">TOP</a></p>
+        <p class="pagetop"><%= link_to 'TOP', root_path, data: {"turbolinks"=>false} %></p>
       </div>
     </footer>
     
