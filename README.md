@@ -35,16 +35,17 @@ GO7SA_BLOG
 ## 実装した機能
 
 
-1.slickを利用したアルバムも兼ねたスライダー機能
+1.slickを利用しスライダー機能持つアルバム
+
 - アルバム機能として枚数を増加予定
 
 <img width="1432" alt="top" src="https://user-images.githubusercontent.com/59817401/79980755-8fe55900-84de-11ea-89b8-5ff0bbad1c1a.png">
 
-2.練習試合等を申し込むことのできるチャット機能、YOUTUBEでの試合観戦
+2.練習試合等を申し込むことのできるチャット機能、You Tubeでの試合観戦
 
 - 他のチームにも広めていき、交流できるアプリを想定
 
-- チーム名がデフォルトで表示されます
+- deviseにて登録したチーム名がデフォルトで表示されます
 
 <img width="1432" alt="youtube" src="https://user-images.githubusercontent.com/59817401/79980648-61677e00-84de-11ea-8396-04d46788d888.png">
 
@@ -89,7 +90,7 @@ def index
 
 <img width="1432" alt="カレンダー" src="https://user-images.githubusercontent.com/59817401/79980667-6cbaa980-84de-11ea-97c1-6123b96cb8b0.png">
 
-主に上記を機能として盛り込みました。
+上記を主な機能として盛り込みました。
 
 ## 工夫した点 苦労した点
 
@@ -97,7 +98,7 @@ def index
 
 - メンバーの得点を中間テーブルで管理し、gameモデルとgame_playerモデルのカラムを同時に更新している点
 
-- 複数のデータベースに跨ってデータを並べ替え、表示させた点
+- 複数のデータベースに跨ってデータを並べ替え、得点ランキングを表示させた点
 
 
 ## 今後
