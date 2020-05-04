@@ -2,25 +2,25 @@
   <p id="notice"><%= notice %></p>
 
   <p>
-    <strong>Title:</strong>
+    <strong>タイトル：</strong>
     <%= @event.title %>
   </p>
 
   <p>
-    <strong>Body:</strong>
+    <strong>内容：</strong>
     <%= @event.body %>
   </p>
 
   <p>
-    <strong>Start date:</strong>
+    <strong>開始時間：</strong>
     <%= @event.start_date %>
   </p>
 
   <p>
-    <strong>End date:</strong>
+    <strong>終了時間：</strong>
     <%= @event.end_date %>
   </p>
 
-  <%= link_to 'Edit', edit_event_path(@event) %> |
-  <%= link_to 'Back', events_path>
+  <%= link_to '編集', edit_event_path(@event) %> 
+  <%# <%= link_to 'Back', events_path %>
 </div>
