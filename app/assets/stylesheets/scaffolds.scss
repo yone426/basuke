@@ -18,7 +18,7 @@ pre {
 
 a {
   color: #000;
-
+ 
   &:visited {
     color: #666;
   }
@@ -91,3 +91,12 @@ label {
     background-color: #f0f0ff;
 }
 
+.new{
+
+  
+    a{
+      text-decoration: none;
+      color: black;
+    }
+  
+}
