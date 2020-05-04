@@ -4,5 +4,6 @@
   <%= render 'form', event: @event %>
 
   <%# <%= link_to 'Show', @event %> 
-  <%= link_to 'TOP', root_path ,data: {"turbolinks"=>false} %>
+  <%= link_to 'TOP', root_path ,data: {"turbolinks"=>false} ,class: "delete"%>
+  <%= link_to '削除', "/events/#{@event.id}", method: :delete ,class: "delete" %>
 </div>
